@@ -27,27 +27,53 @@ export const navUtilities = {
 }
 
 
-const carousel = createElement('div', {class: 'carousel'})
 const firstTitle = createElement('h2')
 firstTitle.textContent = 'Boutique de confection de coliers & Bracelets'
-const l = ['bracelets', 'coliers', 'bagues', 'boucles d\'oreilles']
+const l = [
+    { 
+        name: 'bracelets', 
+        ext: '.jpg' 
+    },
+    {
+        name: 'coliers',
+        ext: '.png'
+    },
+    {
+        name: 'bagues',
+        ext: '.jpg'
+    },
+    {
+        name: 'boucles d\'oreilles',
+        ext: '.jpeg'
+    }
+]
 let ul = createElement('ul')
 l.forEach((e) => {
-    let li = createElement('li')
-    let a = createElement('a', {href: `./${e}.html`})
-    a.textContent = e
+    let li = createElement('li', {class: 'listItemPresentation'})
+    let a = createElement('a', {href: `./${e.name}.html`})
+    a.textContent = e.name
     li.append(a)
     ul.append(li)
     li.addEventListener('click', (e) => {
+        e.preventDefault()
+        const allItems = document.querySelectorAll('.listItemPresentation')
+        allItems.forEach((e) => {
+            e.classList.remove('active')
+        })
         console.log(e.currentTarget)
         const el = e.currentTarget as HTMLLIElement
-        const href = el.innerText
+        el.classList.add('active')
+        const href = el.textContent?.toLowerCase()
+        console.log(href)
         const img = document.querySelector<HTMLImageElement>('.imageSide')!
-        img.src = `./${href}.jpg`
+        const ext = l.find((e) => e.name === href)?.ext
+        console.log(ext)
+        img.src = `./${href}${ext}`
     })
 })
 
-const imageSide = createElement('div', { class: 'imageSide' })
+const imageSide = createElement('img', { class: 'imageSide' })
+
 const callToAction = createElement('div', {class: 'callToAction'})
 const callToActionTitle = createElement('p')
 const callToActionBtn = createElement('button')
