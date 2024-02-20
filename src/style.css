@@ -146,6 +146,15 @@ table {
   font-style: normal;
 }
 
+
+.fredoka-400 {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
 .flex {
   display: flex;
 }
@@ -153,6 +162,7 @@ table {
 body {
   background-color: var(--body-color);
   color: var(--gray);
+  font-family: sans-serif;
 }
 
 nav {
@@ -168,11 +178,12 @@ nav ul {
 
 nav ul li {
   list-style: none;
-  margin-right: 1rem;
+  margin-left: 2rem;
 }
 
 nav ul li a {
   color: var(--gray);
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
 }

@@ -8,6 +8,11 @@ const heartIcon = createElement('i', {class: 'fa-regular fa-heart'})
 const heartIconDiv = createElement('div', {class: 'heartIconDiv'})
 const iconBagDiv = createElement('div', {class: 'iconBagDiv'})
 const iconBag = createElement('i', { class: 'fa-solid fa-bag-shopping'})
+let h1 = createElement('h1')
+h1.textContent = 'Charlie\'s SHOP'
+let img = createElement('img', { src: './vite.svg', alt: 'logo' }) as HTMLImageElement
+export const logo = createElement('div', { class: 'flex jua-regular' }) as HTMLImageElement
+logo.append(img, h1)
 
 heartIconDiv.append(heartIcon)
 iconBagDiv.append(iconBag)

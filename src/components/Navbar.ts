@@ -13,7 +13,7 @@ class Navbar {
 
     render(): void {
         const nav = createElement('nav');
-        const ul = createElement('ul');
+        const ul = createElement('ul', { class: 'fredoka-400' });
         this.links.forEach((link) => {
             const li = createElement('li');
             const a = createElement('a', { href: `./${link}.html` });
