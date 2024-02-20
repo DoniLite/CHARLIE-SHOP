@@ -23,3 +23,16 @@ export function createElement (tagName: string, attributes : Attributes = {}): H
 export function render(children: HTMLElement, parent: HTMLDivElement ): void{
     parent.append(children)
 }
+
+export function createCard(text: string, imgSrc: string, btn: string): HTMLElement {
+    const div = createElement('div', {class: 'card'})
+    div.style.backgroundImage = `url('./${imgSrc}')`
+    const texNode = createElement('div')
+    let p = createElement('p')
+    let link = createElement('a', {href: '#'}) as HTMLAnchorElement
+    p.textContent = text
+    link.textContent = btn
+    texNode.append(p, link)
+    div.append(texNode)
+    return div
+}

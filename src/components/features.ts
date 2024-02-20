@@ -1,4 +1,4 @@
-import { createElement } from "../functions/dom";
+import { createCard, createElement } from "../functions/dom";
 import { addFavorite, openShoppingBag } from "../functions/eventListener";
 
 const navSearchInput = createElement('input', { type: 'search', placeholder: 'Rechercher quelque chose' }) as HTMLInputElement
@@ -60,7 +60,36 @@ const secondDivChild = createElement('div')
 firstDivChild.append(firstTitle, ul, callToAction)
 secondDivChild.append(imageSide)
 flexDiv.append(firstDivChild, secondDivChild)
+const cardElements = [
+    {
+        text: 'Bracelets',
+        imgSrc: 'bracelets.jpg',
+        link: 'Parcourir la collection'
+    },
+    {
+        text: 'Coliers',
+        imgSrc: 'coliers.jpg',
+        link: 'Voir'
+    },
+    {
+        text: 'Boucles d\'oreilles',
+        imgSrc: 'boucles.jpg',
+        link: 'Voir'
+    },
+    {
+        text: 'Bagues',
+        imgSrc: 'bagues.jpg',
+        link: 'Voir'
+    }
+]
+
+const carPresentaion = createElement('div', {class: 'carPresentaion'})
+cardElements.forEach((card) => {
+    const cardElement = createCard(card.text, card.imgSrc, card.link)
+    carPresentaion.append(cardElement)
+})
 
 export const homeViewElements = {
-    flexDiv
+    flexDiv,
+    carPresentaion,
 }
