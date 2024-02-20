@@ -2,9 +2,8 @@ name: NodeJS with Gulp
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+    - main
 
 jobs:
   build:
@@ -22,7 +21,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+    - name: Install Dependencies
       run: |
+        npm install
         npm run build
         gulp
