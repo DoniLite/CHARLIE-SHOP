@@ -166,7 +166,6 @@ body {
 }
 
 nav {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -186,4 +185,56 @@ nav ul li a {
   text-decoration: none;
   font-weight: bold;
   font-size: 20px;
+  transition: .2s;
+}
+
+nav ul li a:hover {
+  color: var(--light-blue);
+}
+
+.navSide {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchInputDiv {
+  padding: 5px;
+  border: solid 1px var(--gray);
+  border-radius: 6px;
+}
+
+.searchInputDiv input {
+  border: none;
+  outline: none;
+  background-color: var(--body-color);
+  color: var(--gray);
+}
+
+.searchInputDiv input::placeholder {
+  color: var(--gray);
+}
+
+.heartIconDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: solid 1px var(--gray);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iconBagDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: solid 1px var(--gray);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.iconBagDiv:hover, .heartIconDiv:hover {
+  background-color: var(--light-blue);
 }

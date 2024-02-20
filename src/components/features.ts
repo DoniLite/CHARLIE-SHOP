@@ -3,7 +3,7 @@ import { addFavorite, openShoppingBag } from "../functions/eventListener";
 
 const navSearchInput = createElement('input', { type: 'search', placeholder: 'Rechercher quelque chose' }) as HTMLInputElement
 const inputSeachIcon = createElement('i', { class: 'fa-solid fa-magnifying-glass' }) as HTMLElement
-const searchInputDiv = createElement('div')
+const searchInputDiv = createElement('div', { class: 'searchInputDiv' })
 const heartIcon = createElement('i', {class: 'fa-regular fa-heart'})
 const heartIconDiv = createElement('div', {class: 'heartIconDiv'})
 const iconBagDiv = createElement('div', {class: 'iconBagDiv'})
@@ -24,4 +24,43 @@ export const navUtilities = {
     searchInputDiv,
     heartIconDiv,
     iconBagDiv,
+}
+
+
+const carousel = createElement('div', {class: 'carousel'})
+const firstTitle = createElement('h2')
+firstTitle.textContent = 'Boutique de confection de coliers & Bracelets'
+const l = ['bracelets', 'coliers', 'bagues', 'boucles d\'oreilles']
+let ul = createElement('ul')
+l.forEach((e) => {
+    let li = createElement('li')
+    let a = createElement('a', {href: `./${e}.html`})
+    a.textContent = e
+    li.append(a)
+    ul.append(li)
+    li.addEventListener('click', (e) => {
+        console.log(e.currentTarget)
+        const el = e.currentTarget as HTMLLIElement
+        const href = el.innerText
+        const img = document.querySelector<HTMLImageElement>('.imageSide')!
+        img.src = `./${href}.jpg`
+    })
+})
+
+const imageSide = createElement('div', { class: 'imageSide' })
+const callToAction = createElement('div', {class: 'callToAction'})
+const callToActionTitle = createElement('p')
+const callToActionBtn = createElement('button')
+callToActionTitle.textContent = 'Venez découvrir nos produits'
+callToActionBtn.textContent = 'Découvrir'
+callToAction.append(callToActionTitle, callToActionBtn)
+const flexDiv = createElement('div', {class: 'flex'})
+const firstDivChild = createElement('div')
+const secondDivChild = createElement('div')
+firstDivChild.append(firstTitle, ul, callToAction)
+secondDivChild.append(imageSide)
+flexDiv.append(firstDivChild, secondDivChild)
+
+export const homeViewElements = {
+    flexDiv
 }
