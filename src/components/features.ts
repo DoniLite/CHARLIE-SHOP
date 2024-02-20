@@ -54,12 +54,12 @@ const callToActionBtn = createElement('button')
 callToActionTitle.textContent = 'Venez découvrir nos produits'
 callToActionBtn.textContent = 'Découvrir'
 callToAction.append(callToActionTitle, callToActionBtn)
-const flexDiv = createElement('div', {class: 'flex'})
+const flexDiv = [] as HTMLElement[]
 const firstDivChild = createElement('div')
 const secondDivChild = createElement('div')
 firstDivChild.append(firstTitle, ul, callToAction)
 secondDivChild.append(imageSide)
-flexDiv.append(firstDivChild, secondDivChild)
+flexDiv.push(firstDivChild, secondDivChild)
 const cardElements = [
     {
         text: 'Bracelets',
@@ -69,12 +69,12 @@ const cardElements = [
     {
         text: 'Coliers',
         imgSrc: 'coliers.jpg',
-        link: 'Voir'
+        link: 'Dénicher un colier'
     },
     {
         text: 'Boucles d\'oreilles',
         imgSrc: 'boucles.jpg',
-        link: 'Voir'
+        link: 'Des perles rares'
     },
     {
         text: 'Bagues',
@@ -83,10 +83,10 @@ const cardElements = [
     }
 ]
 
-const carPresentaion = createElement('div', {class: 'carPresentaion'})
+const carPresentaion = [] as HTMLElement[]
 cardElements.forEach((card) => {
     const cardElement = createCard(card.text, card.imgSrc, card.link)
-    carPresentaion.append(cardElement)
+    carPresentaion.push(cardElement)
 })
 
 export const homeViewElements = {
