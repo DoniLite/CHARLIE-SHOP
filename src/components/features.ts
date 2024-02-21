@@ -36,7 +36,7 @@ const l = [
     },
     {
         name: 'coliers',
-        ext: '.png'
+        ext: '.jpg'
     },
     {
         name: 'bagues',
@@ -68,7 +68,7 @@ l.forEach((e) => {
         const img = document.querySelector<HTMLImageElement>('.imageSide')!
         const ext = l.find((e) => e.name === href)?.ext
         console.log(ext)
-        img.src = `./${href}${ext}`
+        img.src = `./src/assets/img/${href}${ext}`
     })
 })
 
