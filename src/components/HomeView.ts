@@ -24,17 +24,17 @@ export class HomeView {
     }
 
     render() {
-        const container = createElement('div') as HTMLDivElement;
+        const container = createElement('div', {class: 'container'}) as HTMLDivElement;
 
-        const group1Container = createElement('div');
+        const group1Container = createElement('div', {class: 'group1'});
         this.group1.forEach(element => group1Container.appendChild(element));
         container.appendChild(group1Container);
 
-        const carouselContainer = createElement('div');
+        const carouselContainer = createElement('div', {class: 'group2'});
         this.group2.forEach(element => carouselContainer.appendChild(element));
         container.appendChild(carouselContainer);
 
-        const group3Container = createElement('div');
+        const group3Container = createElement('div', {class: 'group3'});
         this.group3.forEach(element => group3Container.appendChild(element));
         container.appendChild(group3Container);
 

@@ -5,8 +5,8 @@ const navSearchInput = createElement('input', { type: 'search', placeholder: 'Re
 const inputSeachIcon = createElement('i', { class: 'fa-solid fa-magnifying-glass' }) as HTMLElement
 const searchInputDiv = createElement('div', { class: 'searchInputDiv' })
 const heartIcon = createElement('i', {class: 'fa-regular fa-heart'})
-const heartIconDiv = createElement('div', {class: 'heartIconDiv'})
-const iconBagDiv = createElement('div', {class: 'iconBagDiv'})
+const heartIconDiv = createElement('div', {class: 'heartIconDiv ml-2'})
+const iconBagDiv = createElement('div', {class: 'iconBagDiv ml-2'})
 const iconBag = createElement('i', { class: 'fa-solid fa-bag-shopping'})
 let h1 = createElement('h1')
 h1.textContent = 'Charlie\'s SHOP'
@@ -72,7 +72,7 @@ l.forEach((e) => {
     })
 })
 
-const imageSide = createElement('img', { class: 'imageSide' })
+const imageSide = createElement('img', { class: 'imageSide', src: './src/assets/img/img.gif' })
 
 const callToAction = createElement('div', {class: 'callToAction'})
 const callToActionTitle = createElement('p')

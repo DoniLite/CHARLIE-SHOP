@@ -1,4 +1,4 @@
-import './style.css'
+import './index.css'
 import Navbar from './components/Navbar.ts'
 import { createElement } from './functions/dom.ts'
 import { homeViewElements, logo, navUtilities } from './components/features.ts'

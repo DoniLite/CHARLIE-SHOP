@@ -12,11 +12,11 @@ class Navbar {
     }
 
     render(): void {
-        const nav = createElement('nav');
-        const ul = createElement('ul', { class: 'fredoka-400' });
+        const nav = createElement('nav', { class: 'flex w-full p-6 justify-between' });
+        const ul = createElement('ul', { class: 'flex fredoka-400 text-xl w-20 ' });
         this.links.forEach((link) => {
-            const li = createElement('li');
-            const a = createElement('a', { href: `./${link}.html` });
+            const li = createElement('li', { class: 'mx-6 hover:text-teal-800 cursor-pointer transition duration-300 ease-in-out transform hover:scale-110'});
+            const a = createElement('a', { href: `./${link}.html`, class:'font-bold' });
             a.textContent = link;
             li.append(a);
             ul.append(li);
