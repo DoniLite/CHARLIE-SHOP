@@ -3,6 +3,9 @@ import Navbar from './components/Navbar.ts'
 import { createElement } from './functions/dom.ts'
 import { homeViewElements, logo, navUtilities } from './components/features.ts'
 import { HomeView } from './components/HomeView.ts'
+import { createIcons, icons } from 'lucide';
+
+createIcons({ icons });
 
 const links = ['home', 'about', 'contact']
 const navAside = createElement('div', {class: 'navSide'}) as HTMLDivElement
